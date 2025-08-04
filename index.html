@@ -100,6 +100,10 @@
                 opacity: 1 !important;
             }
 
+            .active {
+                background-color: var(--color-secondary);
+            }
+
             @keyframes pulse {
             0%, 100% {
                 transform: scale(1);
@@ -111,23 +115,22 @@
         </style>
     </head>
     <body class="bg-primary">
-        <header class="w-75 mx-auto d-flex flex-row justify-content-between align-items-center py-3">
-            <a href="index.html" class="logo-link">
+        <header class="w-75 mx-auto d-flex flex-column justify-content-between align-items-center py-3">
+            <a href="index.html" class="logo-link mb-4">
                 <img src="img/logo-okre-header-desktop.svg" alt="OKRE's logo" class="logo-img" style="max-height: 15vh; width: auto;">
             </a>
 
             <nav class="main-nav">
-                <ul class="d-flex flex-row justify-content-between align-items-center list-unstyled m-0 p-0">
-                    <li class="mx-3"><a href="#about-us" class="underline-none">About us</a></li>
-                    <li class="mx-3"><a href="#solutions" class="underline-none">Solutions</a></li>
-                    <li class="mx-3"><a href="#contact" class="underline-none">Contact</a></li>
+                <ul class="d-flex flex-column justify-content-between align-items-center list-unstyled m-0 p-0">
+                    <li class="mb-3"><a href="#about-us" class="underline-none">About us</a></li>
+                    <li class="mb-3"><a href="#solutions" class="underline-none">Solutions</a></li>
+                    <li class="mb-3"><a href="#contact" class="underline-none">Contact</a></li>
                 </ul>
             </nav>
             
-            <div class="login-language-switcher d-flex flex-row justify-content-between align-items-center">
+            <div class="login-language-switcher d-flex flex-column justify-content-between align-items-center">
                 <a href="/login" class="underline-none">Login</a>
-                
-                <div class="language-switcher ms-3">
+                <div class="language-switcher mt-3">
                     <a href="?lang=en" class="active underline-none">En</a>
                     <span class="separator">|</span>
                     <a href="?lang=es" class="underline-none">Es</a>
@@ -135,7 +138,7 @@
             </div>
         </header>
         
-        <main class="w-75 mx-auto">
+        <main class="w-100 mx-auto px-4">
             <section class="hero my-5 d-flex flex-column align-items-center justify-content-center text-center">
                 <div class="quote-container mb-5">
                     <p class="quote-text">Comprehensive service to maintain an orderly heritage</p>
@@ -181,11 +184,11 @@
             <section class="about-us my-5" id="about-us">
                 <h2 class="section-title">About us</h2>
                 <h3 class="section-subtitle">What we do?</h3>
-                <p class="section-text">
+                <p class="section-text" style="line-height: 2rem !important;">
                     We are a group of professionals with more than 25 years in the industry and the point of contact for the client for the management of the non-financial aspects of their assets.
                 </p>
                 <h3 class="section-subtitle">How do we do it?</h3>
-                <p class="section-text">
+                <p class="section-text" style="line-height: 2rem !important;">
                     We establish a bond of trust between clients, legal advisors, accountants, and other key actors, providing turn-key solutions that ensure order, data protection, transparency, convenience, avoiding errors and execution risks due to lack of regulatory awareness.
                 </p>
             </section>
@@ -195,23 +198,23 @@
             <section class="solutions my-5" id="solutions">
                 <h2 class="section-title">Solutions</h2>
                 <div class="section-questions">
-                    <h3 id="question1" class="">
+                    <h3 id="question1" class="" style="text-align: left !important;">
                         Would you like to enjoy more your family and free time without worrying about administrative issues of your estate?
                     </h3>
-                    <h3 id="question2" class="">
+                    <h3 id="question2" class="" style="text-align: left !important;">
                         Would you like to hire professionals who manage and organize your assets to avoid long-term risks?
                     </h3>
-                    <h3 id="question3" class="">
+                    <h3 id="question3" class="" style="text-align: left !important;">
                         Would you like to ensure that your family's future is secure and well-managed?
                     </h3>
                 </div>
                 <div class="answers">
-                    <h4 class="answer-text">
+                    <h4 class="answer-text" style="text-align: left !important;">
                         At Okre, we help you to answer these questions and with our team of professionals we can provide you with tailor-made solutions.
                     </h4>
                 </div>
-                <div class="section-cards d-flex flex-wrap justify-content-between">
-                    <div class="section-card w-25 bg-secondary rounded-3 p-3">
+                <div class="section-cards d-flex flex-column flex-wrap justify-content-between">
+                    <div class="section-card mb-4 w-100 bg-secondary rounded-3 p-3">
                         <div class="card-circle w-100 bg-white rounded-circle d-flex align-items-center justify-content-center">
                             <img src="img/reportes-de-activos-e-ingresos.svg" alt="Reportes de activos e ingresos" class="card-image w-100 rounded-circle">
                         </div>
@@ -228,7 +231,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="section-card w-25 bg-secondary rounded-3 p-3">
+                    <div class="section-card mb-4 w-100 bg-secondary rounded-3 p-3">
                         <div class="card-circle w-100 bg-white rounded-circle d-flex align-items-center justify-content-center">
                             <img src="img/coordinacion-y-seguimiento-de-la-planificacion-patrimonial.svg" alt="Estate Structure Coordination & Oversight" class="card-image w-100 rounded-circle">
                         </div>
@@ -248,7 +251,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="section-card w-25 bg-secondary rounded-3 p-3">
+                    <div class="section-card mb-4 w-100 bg-secondary rounded-3 p-3">
                         <div class="card-circle w-100 bg-white rounded-circle d-flex align-items-center justify-content-center">
                             <img src="img/gestion-de-recursos-y-servicios-familiares.svg" alt="Gestión de recursos y servicios familiares" class="card-image w-100 rounded-circle">
                         </div>
@@ -324,8 +327,8 @@
             </section>
         </main>
 
-        <footer class="w-75 mx-auto my-5 d-flex flex-row justify-content-between align-items-center">
-            <img src="img/logo-okre-footer.svg" alt="Logo" class="footer-logo" />
+        <footer class="w-75 mx-auto my-5 d-flex flex-column justify-content-between align-items-center">
+            <img src="img/logo-okre-footer.svg" alt="Logo" class="footer-logo mb-4" />
             <p class="footer-contact">
                 Contact us: <a href="mailto:info@okre.services" class="text-white">info@okre.services</a>
             </p>
