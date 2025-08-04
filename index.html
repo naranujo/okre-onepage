@@ -66,40 +66,40 @@
             }
 
             h2 {
-                font-size: 1.5rem !important;
+                font-size: 1.75rem !important;
                 font-weight: 600 !important;
                 font-family: var(--font-family) !important;
                 color: var(--color-white) !important;
-                line-height: 1.5 !important;
+                line-height: 2 !important;
             }
 
             h3 {
-                font-size: 1.15rem !important;
-                font-weight: 400 !important;
+                font-size: 1.5rem !important;
+                font-weight: 600 !important;
                 margin: auto 0 !important;
                 margin-bottom: 1.5rem !important;
                 text-align: justify !important;
                 font-family: var(--font-family) !important;
                 color: var(--color-white) !important;
-                line-height: 1.5 !important;
+                line-height: 2 !important;
             }
 
             h4 {
-                font-size: 1.15rem !important;
-                font-weight: 400 !important;
+                font-size: 1rem !important;
+                font-weight: 600 !important;
                 margin: auto 0 !important;
                 margin-bottom: 1.5rem !important;
                 text-align: justify !important;
                 font-family: var(--font-family) !important;
                 color: var(--color-white) !important;
-                line-height: 1.5 !important;
+                line-height: 2 !important;
             }
 
             li, a, span, p, label {
                 font-size: 1rem !important;
                 font-family: var(--font-family) !important;
                 color: var(--color-white) !important;
-                line-height: 1.5 !important;
+                line-height: 2 !important;
             }
 
             .quote-text {
@@ -112,11 +112,23 @@
             .section-title {
                 font-size: 1.5rem !important;
                 font-weight: 600 !important;
-                margin-bottom: 1.5rem !important;
                 text-decoration: underline;
                 text-decoration-color: var(--color-secondary);
                 text-underline-offset: 0.6rem;
                 text-decoration-thickness: 0.2rem;
+            }
+
+            .section-subtitle {
+                font-size: 1.15rem !important;
+                font-weight: 600 !important;
+                text-align: justify !important;
+            }
+
+            .section-text {
+                font-size: 1rem !important;
+                font-weight: 400 !important;
+                text-align: left !important;
+                line-height: 2rem !important;
             }
 
             hr {
@@ -141,6 +153,15 @@
 
             .selected {
                 background-color: var(--color-secondary);
+            }
+
+            .card-circle {
+                width: 100% !important;
+                height: auto !important;
+            }
+
+            form button {
+                width: 25% !important;
             }
 
             @keyframes pulse {
@@ -193,6 +214,16 @@
                 .section-card {
                     width: 100% !important;
                     margin-bottom: 1.5rem !important;
+                }
+
+                .card-circle {
+                    width: 75% !important;
+                    height: auto !important;
+                    margin: 0 auto !important;
+                }
+
+                form button {
+                    width: 50% !important;
                 }
 
                 /* Footer */
@@ -249,13 +280,13 @@
             </section>
 
             <section class="about-us my-5" id="about-us">
-                <h2 class="section-title">About us</h2>
-                <h3 class="section-subtitle">What we do?</h3>
-                <p class="section-text" style="line-height: 2rem !important;">
+                <h2 class="section-title mb-4">About us</h2>
+                <h3 class="section-subtitle mb-2">What we do?</h3>
+                <p class="section-text mb-5">
                     We are a group of professionals with more than 25 years in the industry and the point of contact for the client for the management of the non-financial aspects of their assets.
                 </p>
-                <h3 class="section-subtitle">How do we do it?</h3>
-                <p class="section-text" style="line-height: 2rem !important;">
+                <h3 class="section-subtitle mb-2">How do we do it?</h3>
+                <p class="section-text mb-5">
                     We establish a bond of trust between clients, legal advisors, accountants, and other key actors, providing turn-key solutions that ensure order, data protection, transparency, convenience, avoiding errors and execution risks due to lack of regulatory awareness.
                 </p>
             </section>
@@ -265,24 +296,24 @@
             <section class="solutions my-5" id="solutions">
                 <h2 class="section-title">Solutions</h2>
                 <div class="section-questions">
-                    <h3 id="question1" class="" style="text-align: left !important;">
-                        Would you like to enjoy more your family and free time without worrying about administrative issues of your estate?
-                    </h3>
-                    <h3 id="question2" class="" style="text-align: left !important;">
-                        Would you like to hire professionals who manage and organize your assets to avoid long-term risks?
-                    </h3>
-                    <h3 id="question3" class="" style="text-align: left !important;">
-                        Would you like to ensure that your family's future is secure and well-managed?
-                    </h3>
+                    <p id="question1" class="" style="text-align: left !important;">
+                        | Would you like to enjoy more your family and free time without worrying about administrative issues of your estate?
+                    </p>
+                    <p id="question2" class="" style="text-align: left !important;">
+                        | Would you like to hire professionals who manage and organize your assets to avoid long-term risks?
+                    </p>
+                    <p id="question3" class="" style="text-align: left !important;">
+                        | Would you like to ensure that your family's future is secure and well-managed?
+                    </p>
                 </div>
                 <div class="answers">
-                    <h4 class="answer-text" style="text-align: left !important;">
+                    <p class="answer-text" style="text-align: left !important;">
                         At Okre, we help you to answer these questions and with our team of professionals we can provide you with tailor-made solutions.
-                    </h4>
+                    </p>
                 </div>
                 <div class="section-cards d-flex flex-wrap justify-content-between">
                     <div class="section-card w-25 bg-secondary rounded-3 p-3">
-                        <div class="card-circle w-100 bg-white rounded-circle d-flex align-items-center justify-content-center">
+                        <div class="card-circle bg-white rounded-circle d-flex align-items-center justify-content-center">
                             <img src="img/reportes-de-activos-e-ingresos.svg" alt="Reportes de activos e ingresos" class="card-image w-100 rounded-circle">
                         </div>
                         <h4 class="card-title text-center mt-4 mb-3 mx-1">Asset & Income Reporting</h4>
@@ -299,7 +330,7 @@
                         </ul>
                     </div>
                     <div class="section-card w-25 bg-secondary rounded-3 p-3">
-                        <div class="card-circle w-100 bg-white rounded-circle d-flex align-items-center justify-content-center">
+                        <div class="card-circle bg-white rounded-circle d-flex align-items-center justify-content-center">
                             <img src="img/coordinacion-y-seguimiento-de-la-planificacion-patrimonial.svg" alt="Estate Structure Coordination & Oversight" class="card-image w-100 rounded-circle">
                         </div>
                         <h4 class="card-title text-center mt-4 mb-3 mx-1">Estate Structure Coordination & Oversight</h4>
@@ -319,7 +350,7 @@
                         </ul>
                     </div>
                     <div class="section-card w-25 bg-secondary rounded-3 p-3">
-                        <div class="card-circle w-100 bg-white rounded-circle d-flex align-items-center justify-content-center">
+                        <div class="card-circle bg-white rounded-circle d-flex align-items-center justify-content-center">
                             <img src="img/gestion-de-recursos-y-servicios-familiares.svg" alt="Gestión de recursos y servicios familiares" class="card-image w-100 rounded-circle">
                         </div>
                         <h4 class="card-title text-center mt-4 mb-3 mx-1">Family Resources & Services Management</h4>
@@ -365,7 +396,7 @@
                     </div>
 
                     <div class="w-100 p-3 d-flex flex-row justify-content-center align-items-center">
-                        <button type="submit" class="btn bg-primary text-white w-25">Submit</button>
+                        <button type="submit" class="btn bg-primary text-white">Submit</button>
                     </div>
                 </form>
             </section>
