@@ -25,6 +25,30 @@
                 --font-family: Tahoma, Helvetica, Arial, sans-serif;
             }
 
+            header {
+                display: flex !important;
+                flex-direction: row !important;
+            }
+
+            header .main-nav ul {
+                display: flex !important;
+                flex-direction: row !important;
+            }
+
+            header .login-language-switcher {
+                display: flex !important;
+                flex-direction: row !important;
+            }
+
+            main {
+                width: 75% !important;
+            }
+
+            footer {
+                display: flex !important;
+                flex-direction: row !important;
+            }
+
             .bg-primary {
                 background-color: var(--bg-primary) !important;
             }
@@ -100,37 +124,106 @@
                 opacity: 1 !important;
             }
 
-            .active {
+            .video-container button {
+                position: absolute;
+                bottom: 1rem;
+                right: 1rem;
+                background: rgba(0,0,0,0.6);
+                color: white;
+                border: none;
+                padding: 0.8em;
+                border-radius: 50%;
+                font-size: 1.2rem;
+                cursor: pointer;
+                z-index: 10;
+                animation: pulse 1.5s infinite ease-in-out;
+            }
+
+            .selected {
                 background-color: var(--color-secondary);
             }
 
             @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
+                0%, 100% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.2);
+                }
             }
-            50% {
-                transform: scale(1.2);
+
+            @media (max-width: 768px) {
+                /* Header */
+                header {
+                    flex-direction: column !important;
+                }
+
+                header .logo-link {
+                    margin-bottom: 1.5rem !important;
+                }
+
+                header .main-nav ul {
+                    flex-direction: column !important;
+                }
+
+                header .main-nav ul li {
+                    margin: 0 0 1rem 0 !important;
+                }
+
+                header .login-language-switcher {
+                    flex-direction: column !important;
+                }
+                
+                header .login-language-switcher .language-switcher {
+                    margin: 1rem 0 0 0 !important;
+                }
+
+                /* Main */
+                main {
+                    width: 100% !important;
+                    padding: 0 1.5rem !important;
+                }
+
+                /* Section solutions */
+                .section-cards {
+                    flex-direction: column !important;
+
+                }
+
+                .section-card {
+                    width: 100% !important;
+                    margin-bottom: 1.5rem !important;
+                }
+
+                /* Footer */
+                footer {
+                    flex-direction: column !important;
+                }
+
+                footer img {
+                    margin-bottom: 1.5rem !important;
+                }
             }
-        }
         </style>
     </head>
     <body class="bg-primary">
-        <header class="w-75 mx-auto d-flex flex-column justify-content-between align-items-center py-3">
-            <a href="index.html" class="logo-link mb-4">
+        <header class="w-75 mx-auto justify-content-between align-items-center py-3">
+            <a href="index.html" class="logo-link">
                 <img src="img/logo-okre-header-desktop.svg" alt="OKRE's logo" class="logo-img" style="max-height: 15vh; width: auto;">
             </a>
 
             <nav class="main-nav">
-                <ul class="d-flex flex-column justify-content-between align-items-center list-unstyled m-0 p-0">
-                    <li class="mb-3"><a href="#about-us" class="underline-none">About us</a></li>
-                    <li class="mb-3"><a href="#solutions" class="underline-none">Solutions</a></li>
-                    <li class="mb-3"><a href="#contact" class="underline-none">Contact</a></li>
+                <ul class="justify-content-between align-items-center list-unstyled m-0 p-0">
+                    <li class="mx-3"><a href="#about-us" class="underline-none">About us</a></li>
+                    <li class="mx-3"><a href="#solutions" class="underline-none">Solutions</a></li>
+                    <li class="mx-3"><a href="#contact" class="underline-none">Contact</a></li>
                 </ul>
             </nav>
             
-            <div class="login-language-switcher d-flex flex-column justify-content-between align-items-center">
+            <div class="login-language-switcher justify-content-between align-items-center">
                 <a href="/login" class="underline-none">Login</a>
-                <div class="language-switcher mt-3">
+                
+                <div class="language-switcher ms-3">
                     <a href="?lang=en" class="active underline-none">En</a>
                     <span class="separator">|</span>
                     <a href="?lang=es" class="underline-none">Es</a>
@@ -138,28 +231,14 @@
             </div>
         </header>
         
-        <main class="w-100 mx-auto px-4">
+        <main class="mx-auto">
             <section class="hero my-5 d-flex flex-column align-items-center justify-content-center text-center">
                 <div class="quote-container mb-5">
                     <p class="quote-text">Comprehensive service to maintain an orderly heritage</p>
                 </div>
 
                 <div class="video-container" style="position: relative;">
-                    <button id="unmute-btn"
-                        style="
-                            position: absolute;
-                            bottom: 1rem;
-                            right: 1rem;
-                            background: rgba(0,0,0,0.6);
-                            color: white;
-                            border: none;
-                            padding: 0.8em;
-                            border-radius: 50%;
-                            font-size: 1.2rem;
-                            cursor: pointer;
-                            z-index: 10;
-                            animation: pulse 1.5s infinite ease-in-out;
-                        ">
+                    <button id="unmute-btn">
                         <img src="img/volume.svg" alt="Unmute" style="width: 1.5em; height: 1.5em;">
                     </button>
                     <video class="w-100 hero-video" autoplay muted loop poster="img/video-preview.jpg" id="hero-video">
@@ -167,18 +246,6 @@
                         Your browser does not support the video tag.
                     </video>
                 </div>
-
-
-                <script>
-                    const video = document.getElementById('hero-video');
-                    const unmuteBtn = document.getElementById('unmute-btn');
-
-                    unmuteBtn.addEventListener('click', () => {
-                        video.muted = false;
-                        video.play();
-                        unmuteBtn.style.display = 'none'; // Ocultar botón
-                    });
-                </script>
             </section>
 
             <section class="about-us my-5" id="about-us">
@@ -213,8 +280,8 @@
                         At Okre, we help you to answer these questions and with our team of professionals we can provide you with tailor-made solutions.
                     </h4>
                 </div>
-                <div class="section-cards d-flex flex-column flex-wrap justify-content-between">
-                    <div class="section-card mb-4 w-100 bg-secondary rounded-3 p-3">
+                <div class="section-cards d-flex flex-wrap justify-content-between">
+                    <div class="section-card w-25 bg-secondary rounded-3 p-3">
                         <div class="card-circle w-100 bg-white rounded-circle d-flex align-items-center justify-content-center">
                             <img src="img/reportes-de-activos-e-ingresos.svg" alt="Reportes de activos e ingresos" class="card-image w-100 rounded-circle">
                         </div>
@@ -231,7 +298,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="section-card mb-4 w-100 bg-secondary rounded-3 p-3">
+                    <div class="section-card w-25 bg-secondary rounded-3 p-3">
                         <div class="card-circle w-100 bg-white rounded-circle d-flex align-items-center justify-content-center">
                             <img src="img/coordinacion-y-seguimiento-de-la-planificacion-patrimonial.svg" alt="Estate Structure Coordination & Oversight" class="card-image w-100 rounded-circle">
                         </div>
@@ -251,7 +318,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="section-card mb-4 w-100 bg-secondary rounded-3 p-3">
+                    <div class="section-card w-25 bg-secondary rounded-3 p-3">
                         <div class="card-circle w-100 bg-white rounded-circle d-flex align-items-center justify-content-center">
                             <img src="img/gestion-de-recursos-y-servicios-familiares.svg" alt="Gestión de recursos y servicios familiares" class="card-image w-100 rounded-circle">
                         </div>
@@ -269,29 +336,6 @@
                         </ul>
                     </div>
                 </div>
-
-                <script>
-                    window.addEventListener('load', () => {
-                        const titles = document.querySelectorAll('.card-title');
-                        let maxHeight = 0;
-
-                        // Primero, quitamos cualquier altura fija previa
-                        titles.forEach(title => {
-                        title.style.minHeight = 'unset';
-                        });
-
-                        // Medimos la mayor altura
-                        titles.forEach(title => {
-                        const height = title.offsetHeight;
-                        if (height > maxHeight) maxHeight = height;
-                        });
-
-                        // Asignamos esa altura a todos
-                        titles.forEach(title => {
-                        title.style.minHeight = `${maxHeight}px`;
-                        });
-                    });
-                </script>
             </section>
 
             <hr class="my-5">
@@ -327,11 +371,45 @@
             </section>
         </main>
 
-        <footer class="w-75 mx-auto my-5 d-flex flex-column justify-content-between align-items-center">
-            <img src="img/logo-okre-footer.svg" alt="Logo" class="footer-logo mb-4" />
+        <footer class="w-75 mx-auto my-5 justify-content-between align-items-center">
+            <img src="img/logo-okre-footer.svg" alt="Logo" class="footer-logo" />
             <p class="footer-contact">
                 Contact us: <a href="mailto:info@okre.services" class="text-white">info@okre.services</a>
             </p>
-        </footer>  
+        </footer>
+
+        <script>
+            const video = document.getElementById('hero-video');
+            const unmuteBtn = document.getElementById('unmute-btn');
+
+            unmuteBtn.addEventListener('click', () => {
+                video.muted = false;
+                video.play();
+                unmuteBtn.style.display = 'none'; // Ocultar botón
+            });
+        </script>
+
+        <script>
+            window.addEventListener('load', () => {
+                const titles = document.querySelectorAll('.card-title');
+                let maxHeight = 0;
+
+                // Primero, quitamos cualquier altura fija previa
+                titles.forEach(title => {
+                title.style.minHeight = 'unset';
+                });
+
+                // Medimos la mayor altura
+                titles.forEach(title => {
+                const height = title.offsetHeight;
+                if (height > maxHeight) maxHeight = height;
+                });
+
+                // Asignamos esa altura a todos
+                titles.forEach(title => {
+                title.style.minHeight = `${maxHeight}px`;
+                });
+            });
+        </script>
     </body>
 </html>
